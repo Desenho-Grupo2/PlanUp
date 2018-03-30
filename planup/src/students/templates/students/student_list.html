@@ -1,0 +1,11 @@
+<h1>Students</h1>
+<ul>
+    {% for student in object_list %}
+    <li>{{ student.name_student }}  :
+    <a href="{% url "student_edit" student.id %}">update</a>
+    <a href="{% url "student_delete" student.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "student_new" %}">New</a>
