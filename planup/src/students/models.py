@@ -6,6 +6,7 @@ class Student(models.Model):
     name_student = models.CharField(max_length=40)
     email_student = models.EmailField(max_length=40)
     password_student = models.CharField(max_length=14)
+    registration_student = models.CharField(max_length=14)
 
     def __unicode__(self):
         return self.name

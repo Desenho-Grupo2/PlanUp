@@ -4,6 +4,7 @@
     <li>{{ student.name_student }}  :
     <a href="{% url "student_edit" student.id %}">update</a>
     <a href="{% url "student_delete" student.id %}">delete</a>
+    <a href="{% url "student_show" student.id %}">Show</a>
     </li>
     {% endfor %}
 </ul>
