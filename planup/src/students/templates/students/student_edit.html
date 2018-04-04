@@ -1,7 +1,7 @@
 {% include "navbar.html" %}
 
 <div class="container">
-    <form action="" method="post" class="form-horizontal" role="form">
+    <form action="" method="post" class="form-horizontal" role="form">{% csrf_token %}
         <input type='hidden' name='csrfmiddlewaretoken'
                value='WZbAnMuMw5SM3hdryuNTxAHESpZ4QaYeUCgoomqRvuOPURPwboMrXkfKxVl0PJvA' />
 
