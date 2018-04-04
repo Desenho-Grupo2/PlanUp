@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<html>
+    <title>PlanUp!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="w3-top">
+            <div class="w3-bar w3-blue w3-card">
+                <a class="navbar-brand" id="img-unb" target="_blank">
+                    <img src="{% static 'images/unb.png' %}" alt="Imagem da UnB" style="width: 40px" /></a>
+                <a href="/" class="navbar-brand">PLANUP!</a>
+                <div class="w3-right w3-hide-small">
+                    <a class="navbar-brand"id="myBtn"><i class="fa fa-envelope"></i> 2018/1</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
