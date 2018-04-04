@@ -1,17 +1,20 @@
 {% include "navbar.html" %}
 
 <div class="container">
-    <form method="post" class="form-horizontal" role="form">
-        <input type='hidden' name='csrfmiddlewaretoken' value='3UOQiRT1Eu6JuqIB1ZOBDcjOZRVZ8VBV7qn2NjX4DR9YAZ92KrwXgwUZ1YIpKg1Z' />
+    <form action="" method="post" class="form-horizontal" role="form">
+        <input type='hidden' name='csrfmiddlewaretoken'
+               value='WZbAnMuMw5SM3hdryuNTxAHESpZ4QaYeUCgoomqRvuOPURPwboMrXkfKxVl0PJvA' />
 
         <h2 align="center">Cadastro de Aluno</h2>
-        <h2 align="center">Cadastro de Aluno</h2>
+        <h2 align="center">Alterações de Informações</h2>
         <div class="form-group">
             <label for="id_name_student" class="col-sm-3 control-label">Nome Completo</label>
             <div class="col-sm-9">
                 <input type="text" id="id_name_student" placeholder="Nome Completo"
-                       maxlength="40" required class="form-control" autofocus name="name_student">
-                <span class="help-block">Insira o seu nome completo</span>
+                       maxlength="40" required class="form-control" autofocus name="name_student"
+                       value="{{student.name_student}}"
+                >
+                <span class="help-block">Deseja Trocar o Nome?</span>
             </div>
         </div>
 
@@ -19,8 +22,10 @@
             <label for="id_email_student" class="col-sm-3 control-label">Email</label>
                 <div class="col-sm-9">
                     <input type="email" id="id_email_student" placeholder="Email"
-                           maxlength="40" required class="form-control" name="email_student">
-                    <span class="help-block">Insira o seu email</span>
+                           maxlength="40" required class="form-control" name="email_student"
+                           value="{{student.email_student}}"
+                    >
+                    <span class="help-block">Desejar Trocar o Email?</span>
                 </div>
         </div>
 
@@ -28,7 +33,8 @@
             <label for="id_registration_student" class="col-sm-3 control-label">Matrícula</label>
             <div class="col-sm-9">
                 <input type="text" id="id_registration_student" placeholder="Matrícula"
-                       maxlength="14" required class="form-control" autofocus name="registration_student">
+                       maxlength="14" required class="form-control" autofocus name="registration_student"
+                       value="{{student.registration_student}}">
                 <span class="help-block">Insira a sua matrícula</span>
             </div>
         </div>
@@ -37,16 +43,20 @@
             <label for="id_password_student" class="col-sm-3 control-label">Senha</label>
             <div class="col-sm-9">
                 <input type="password" id="id_password_student" placeholder="Senha"
-                       maxlength="14" required class="form-control" name="password_student">
-                <span class="help-block">Senha a ser utilizada neste sistema</span>
+                       maxlength="14" required class="form-control" name="password_student"
+                       value="{{student.password_student}}"
+                >
+                <span class="help-block">Deseja Trocar a Senha?</span>
             </div>
         </div>
 
         <div class="form-group">
             <label for="id_age_of_birth_student" class="col-sm-3 control-label">Data de Nascimento</label>
             <div class="col-sm-9">
-                <input type="date" id="id_age_of_birth_student" class="form-control" name="age_of_birth_student">
-                <span class="help-block">Insira sua data de nascimento</span>
+                <input type="date" id="id_age_of_birth_student" class="form-control" name="age_of_birth_student"
+                        value="{{student.age_of_birth_student}}"
+                >
+                <span class="help-block">Deseja Trocar sua Data de Nascimento?</span>
             </div>
         </div>
 
@@ -76,10 +86,10 @@
 
         <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
-                <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
-                <a href="/" class="btn btn-warning btn-block">Cancelar Registro</a>
-                <button type="reset" class="btn btn-info btn-block">Limpar Campos</button>
+                <button type="submit" class="btn btn-success btn-block">Alterar Informações</button>
+                <a href="/showStudent/{{student.id}}" class="btn btn-warning btn-block">Cancelar</a>
             </div>
         </div>
     </form>
 </div>
+

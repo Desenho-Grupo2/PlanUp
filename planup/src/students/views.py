@@ -19,11 +19,12 @@ class StudentCreate(CreateView):
     template_name = "students/student_new.html"
 
 class StudentUpdate(UpdateView):
-    model = Student
-    success_url = reverse_lazy("student_list")
-    fields = ["name_student", "email_student", "password_student", "registration_student","age_of_birth"]
-    template_name_suffix = "_update_form"
 
+    model = Student
+
+    form_class = StudentForm
+    success_url = reverse_lazy("student_list")
+    template_name = "students/student_edit.html"
 
 class StudentDelete(DeleteView):
     model = Student
