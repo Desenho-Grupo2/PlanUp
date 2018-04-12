@@ -2,11 +2,12 @@
 
 <div class="container">
     <form action="" method="post" class="form-horizontal" role="form">
-        <input type='hidden' name='csrfmiddlewaretoken'
+        {% csrf_token %}
+        <input type='hidden' name='{% csrf_token %}
                value='WZbAnMuMw5SM3hdryuNTxAHESpZ4QaYeUCgoomqRvuOPURPwboMrXkfKxVl0PJvA' />
 
-        <h2 align="center">Cadastro de Aluno</h2>
         <h2 align="center">Alterações de Informações</h2>
+
         <div class="form-group">
             <label for="id_name_student" class="col-sm-3 control-label">Nome Completo</label>
             <div class="col-sm-9">
