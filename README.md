@@ -40,3 +40,5 @@ O passo a seguir é válido tanto para o Docker quanto para o pip.<br>
 Pelo seu browser favorito, entre na seguinte URL:
 
           `0.0.0.0:8000/`
+
+Pronto!
