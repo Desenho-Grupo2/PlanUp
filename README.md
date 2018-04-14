@@ -18,6 +18,8 @@ Agora há duas opções: utilizando Docker (recomendado) ou pip + ambiente virtu
 
 **Utilizando o pip + ambiente virtual:**
 
+0) O projeto utiliza o Python3 na versão `3.6.4`. Recomendamos fortemente utilizar esta versão do Python.
+
 1) Crie um ambiente virtual python:
 
           $ python3 -m venv .virtualenvs/planup
@@ -39,6 +41,6 @@ Agora há duas opções: utilizando Docker (recomendado) ou pip + ambiente virtu
 O passo a seguir é válido tanto para o Docker quanto para o pip.<br>
 Pelo seu browser favorito, entre na seguinte URL:
 
-          `0.0.0.0:8000/`
+          0.0.0.0:8000/
 
 Pronto!
