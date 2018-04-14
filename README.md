@@ -4,8 +4,8 @@
 
 Para os depois métodos de executar a aplicação é necessário clonar o repositório e entrar na pasta raiz:<br>
 
-          `$ git clone https://github.com/Desenho-Grupo2/welcometotheDjango.git`<br>
-          `$ cd PlanUp/`
+          $ git clone https://github.com/Desenho-Grupo2/welcometotheDjango.git
+          $ cd PlanUp/
 
 Agora há duas opções: utilizando Docker (recomendado) ou pip + ambiente virtual do Python.
 
@@ -14,25 +14,25 @@ Agora há duas opções: utilizando Docker (recomendado) ou pip + ambiente virtu
 1) Instale o docker<br>
 2) Execute o comando a seguir no terminal (testado apenas no linux)
 
-          `$ sudo sh build_run.sh`
+          $ sudo sh build_run.sh
 
 **Utilizando o pip + ambiente virtual:**
 
-1) Crie um ambiente virtual python:<br>
+1) Crie um ambiente virtual python:
 
-          `$ python3 -m venv .virtualenvs/planup`
+          $ python3 -m venv .virtualenvs/planup
 
 2) Ative o ambiente criado:
 
-          `$ source .virtualenvs/bin/planup`
+          $ source .virtualenvs/bin/planup
 
 3) Instale as dependências Python do projeto:
 
-          `$ pip install -r requirements.txt`
+          $ pip install -r requirements.txt
 
 4) Execute o script responsável por "subir" o servidor:
 
-          `$ sudo sh run.sh`
+          $ sudo sh run.sh
 
 **Entrando na aplicação (Docker ou pip)**:
 
