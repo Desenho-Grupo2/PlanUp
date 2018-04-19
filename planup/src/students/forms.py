@@ -1,14 +1,12 @@
 from django import forms
-from .models import Student
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-class StudentForm(forms.ModelForm):
+
+class StudentForm(UserCreationForm):
+
+    registration = forms.CharField(max_length=14)
 
     class Meta:
-
-        model = Student
-        fields = ("name_student",
-                  "email_student",
-                  "password_student",
-                  "registration_student",
-                  "age_of_birth_student",
-                  "gender_student")
+        model = User
+        fields = ('username', 'registration', 'password1', 'password2',"email","first_name")
