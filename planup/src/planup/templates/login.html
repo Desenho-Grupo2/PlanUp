@@ -1,27 +1,35 @@
-{% extends 'base.html' %}
+{% load staticfiles %}
+{% include "navbar.html" %}
 
-{% block content %}
-  <h2>Log in to My Site</h2>
-  <h1>SE JUNTOU COM AS AMIGAS E FORAM LÁ PRA CASA</h1>
-  {% if form.errors %}
-    <p style="color: red">Your username and password didn't match. Please try again.</p>
-  {% endif %}
-  <form method="post">
-    {% csrf_token %}
-    <input type="hidden" name="next" value="{{ next }}" />
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}<br>
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-        {% if field.help_text %}
-          <p><small style="color: grey">{{ field.help_text }}</small></p>
-        {% endif %}
-      </p>
-    {% endfor %}
-    <button type="submit">Log in</button>
-    <a href="{% url 'signup' %}">New to My Site? Sign up</a>
-  </form>
-{% endblock %}
+<html>
+    <title>PlanUp!</title>
+
+    <div class="w3-content" style="max-width:1100px">
+      <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+         <img src="{% static 'images/unb.png' %}" class="w3-round w3-image w3-opacity-min" alt="Imagem UnB" width="600" height="750">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+          <form role="form" method="POST">{% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}" />
+                  <div class="form-group">
+                    <label for="id_username"><span class="glyphicon glyphicon-user"></span> Matrícula</label>
+                    <input type="text" class="form-control" id="id_username"
+                           name="username" required placeholder="Insira Sua Matrícula">
+                  </div>
+                  <div class="form-group">
+                    <label for="id_password"><span class="glyphicon glyphicon-eye-open"></span> Senha</label>
+                    <input type="password" class="form-control" id="id_password"
+                           name="password" required placeholder="Insira a Sua Senha">
+                  </div>
+                    <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Entrar</button>
+                </form>
+            <div class="container" align="left">
+                <p>Não é membro ainda? <a href="/novoAluno">Cadastrar-se</a></p>
+                <p>Esqueceu a <a href="#">Senha?</a></p>
+              </div>
+        </div>
+      </div>
+    </div>
+</html>

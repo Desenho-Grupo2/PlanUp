@@ -1,4 +1,8 @@
-<h1>{{student.name_student}}</h1>
-<h2>{{student.password_student}}</h2>
-<h2>{{student.registration_student}}</h2>
-<h2>{{student.gender_student}}</h2>
+{% include "navbar.html" %}
+{% block content %}
+    <br>
+    <br>
+  <h2>Welcome,{{ user.username }}</small>!</h2>
+  <p>Your birth date: {{ user.student.registration }}</p>
+  <p>sadas: {{user.first_name}}</p>
+{% endblock %}
