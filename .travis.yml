@@ -1,0 +1,24 @@
+
+language: python
+
+python:
+  - 3.5
+  
+services:
+  - sqlite3
+
+env:
+  - DJANGO=2.0.4
+
+before_install:
+  - export PYTHONPATH=$HOME/builds/Desenho-Grupo2/PlanUp
+  - export PIP_USE_MIRRORS=true
+
+install:
+  - pip install -r requirements.txt
+  - pip install django==$DJANGO --quiet
+  - python setup.py -q install
+
+script:
+  - ./manage.py migrate
+  #- py.test --create-db
