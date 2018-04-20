@@ -5,7 +5,7 @@ from students import views
 import subjects.views
 from django.urls import path
 
-from subjects.views import list_subject, create_subject, update_subject
+from subjects.views import list_subject, create_subject, update_subject, delete_subject
 
 
 urlpatterns = [
@@ -19,4 +19,5 @@ urlpatterns = [
     path('newSubject/', create_subject, name="new_subject"),
     path('listSubject/', list_subject, name='list_subject'),
     path('updateSubject/<int:id>', update_subject, name="update_subject"),
+    path('delete/<int:id>',delete_subject,name='delete_subject')
 ]

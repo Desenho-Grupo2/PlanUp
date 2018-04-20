@@ -9,15 +9,11 @@
 </head>
 
 <body>
-    <h1>New/Update subject</h1>
-    <form method="POST">
-        {% csrf_token %} 
-        {{subject_form}}
-        <button type="submit">Save</button>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Are you sure that do you want delete {{subject.name_subject}}</h2>
+        <button type "submit">Confirm</button>
     </form>
-    {% if subject %}
-        <a href="{% url 'delete_subject' subject.id %}">Delete</a>
-    {% endif %}
 </body>
 
 </html>

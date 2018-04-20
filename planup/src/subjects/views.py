@@ -34,3 +34,13 @@ def update_subject(request, id):
         return redirect('list_subject')
 
     return render(request, 'subjects/new_subject.html', {'subject_form': subject_form, 'subject': subject})
+
+
+def delete_subject(request, id):
+    subject = Subject.objects.get(id=id)
+
+    if request.method == 'POST':
+        subject.delete()
+        return redirect('list_subject')
+
+    return render(request, 'subjects/delete_confirm_subeject.html', {'subject': subject})
