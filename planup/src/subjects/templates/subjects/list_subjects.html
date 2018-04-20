@@ -12,15 +12,19 @@
 
 <body>
     <ul>
-        <br><br><br>
-        {% for subject in subjects %}
-        
+        <br>
+        <br>
+        <br> {% for subject in subjects %}
+        <a href="{% url 'update_subject' subject.id%}">
             <li>{{subject.subject_name}}</li>
         </a>
         {% endfor %}
     </ul>
     <a href="{% url 'new_subject'%}">new subject</a>
-    </br></br></br>
+
+    </br>
+    </br>
+    </br>
 </body>
 
 </html>
