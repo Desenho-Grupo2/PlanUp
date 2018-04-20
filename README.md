@@ -1,3 +1,5 @@
+<img src="https://travis-ci.org/Desenho-Grupo2/PlanUp.svg?branch=master">
+
 # PlanUp
 
 ### Executando a aplicação
