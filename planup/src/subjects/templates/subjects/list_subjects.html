@@ -1,0 +1,26 @@
+{% include "navbar.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" cont ent="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <br><br><br>
+        {% for subject in subjects %}
+        
+            <li>{{subject.subject_name}}</li>
+        </a>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'new_subject'%}">new subject</a>
+    </br></br></br>
+</body>
+
+</html>
