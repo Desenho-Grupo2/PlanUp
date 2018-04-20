@@ -1,4 +1,4 @@
-<img src="https://travis-ci.org/Desenho-Grupo2/PlanUp.svg?branch=master">
+<img src="https://travis-ci.org/Desenho-Grupo2/PlanUp.svg?branch=master"> <img src="https://codeclimate.com/github/Desenho-Grupo2/PlanUp.svg?branch=master">
 
 # PlanUp
 
