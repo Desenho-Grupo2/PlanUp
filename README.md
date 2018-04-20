@@ -1,4 +1,4 @@
-<img src="https://travis-ci.org/Desenho-Grupo2/PlanUp.svg?branch=master"> <img src="https://codeclimate.com/github/Desenho-Grupo2/PlanUp.svg?branch=master">
+[![Build Status](https://travis-ci.org/Desenho-Grupo2/PlanUp.svg?branch=master)](https://travis-ci.org/Desenho-Grupo2/PlanUp) [![codeclimate status](https://codeclimate.com/github/Desenho-Grupo2/PlanUp.svg?branch=master)](https://codeclimate.com/github/Desenho-Grupo2/PlanUp)
 
 # PlanUp
 
