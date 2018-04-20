@@ -20,5 +20,4 @@ install:
 
 script:
   - ./manage.py migrate
-  - sh run.sh
   #- py.test --create-db
