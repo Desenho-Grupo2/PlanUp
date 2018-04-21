@@ -1,29 +1,35 @@
 {% load staticfiles %}
 
-<html>
-    <title>PlanUp!</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div class="w3-top">
-            <div class="w3-bar w3-blue w3-card">
-                <a class="navbar-brand" id="img-unb" target="_blank">
-                    <img src="{% static 'images/unb.png' %}" alt="Imagem da UnB" style="width: 40px" /></a>
-                <a href="/" class="navbar-brand">PLANUP!</a>
-                <div class="w3-right w3-hide-small">
-                    <a class="navbar-brand"id="myBtn"><i class="fa fa-envelope"></i> 2018/1</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
-
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="img-unb" target="_blank">
+          <img src="{% static 'images/unb.png' %}" alt="Imagem da UnB" style="width: 40px" /></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">PlanUp!</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class ="glyphicon glyphicon-tasks"></span> Tarefas</a></li>
+        <li><a href="#"><span class ="glyphicon glyphicon-book"</span> Disciplinas</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Minha Conta</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
