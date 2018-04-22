@@ -1,4 +1,108 @@
-<h1>{{student.name_student}}</h1>
-<h2>{{student.password_student}}</h2>
-<h2>{{student.registration_student}}</h2>
-<h2>{{student.gender_student}}</h2>
+{% include "navbar.html" %}
+
+<div class="container text-center">
+<div class="row">
+  <div class="col-sm-3 well">
+    <div class="well">
+      <p><a href="#">Meu perfil</a></p>
+      <img src="aluno.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+    </div>
+    <div class="well">
+      <p><a href="#">Disciplinas</a></p>
+    </div>
+    <div class="alert alert-success fade in">
+      <a href="#" class="close" data-dismiss="alert" aria-label="fechar">×</a>
+      <p><strong>Migue!!!</strong></p>
+      Você tem tarefas atrasadas!
+    </div>
+    <p><a href="#">Pesquisar sobre metodologias agéis</a></p>
+    <p><a href="#">Entrega do primeiro ponto de controle</a></p>
+    <p><a href="#">Mandar email para o professor</a></p>
+  </div>
+  <div class="col-sm-7">
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+         <p>Nome</p>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="well">
+          <p>{{student.name_student}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+         <p>Matricula</p>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="well">
+          <p>{{student.registration_student}}</p>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Email</p>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="well">
+        <p>{{student.email_student}}</p>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="well">
+     <p>Data de nascimento</p>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="well">
+      <p>{{student.age_of_birth_student}}</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="well">
+     <p>Sexo</p>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="well">
+      <p>{{student.gender_student}}</p>
+    </div>
+  </div>
+</div>
+</div>
+
+  <div class="col-sm-2 well">
+    <p>Listar proximos compromisso aqui:</p>
+    <div class="thumbnail">
+      <p><strong>RU</strong></p>
+      <p>Sexta, 20 de Abril 2018</p>
+      <button class="btn btn-primary">Info</button>
+    </div>
+    <div class="well">
+      <p>ADS</p>
+    </div>
+    <div class="well">
+      <p>ADS</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer class="container-fluid text-center">
+<p>PlanUP 2018</p>
+</footer>
+
+</body>
+</html>
