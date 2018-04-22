@@ -5,4 +5,10 @@
   <h2>Welcome,{{ user.username }}</small>!</h2>
   <p>Your birth date: {{ user.student.registration }}</p>
   <p>sadas: {{user.first_name}}</p>
+  <p>id: {{user.student.id}}</p>
+  <p>matricula: {{user.student.registration}}</p>
+  <p>Senha: {{user.password}}</p>
+
+<a href="{% url "student_edit" %}">Editar</a>
+<a href="{% url 'logout' %}">logout</a>
 {% endblock %}
