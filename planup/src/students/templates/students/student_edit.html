@@ -1,61 +1,42 @@
 {% include "navbar.html" %}
 
 <div class="container">
-    <form action="" method="post" class="form-horizontal" role="form">
-        {% csrf_token %}
-        <input type='hidden' name='{% csrf_token %}
-               value='WZbAnMuMw5SM3hdryuNTxAHESpZ4QaYeUCgoomqRvuOPURPwboMrXkfKxVl0PJvA' />
+    <form method="post" class="form-horizontal" role="form" enctype="multipart/form-data">{% csrf_token %}
+        <input type='hidden' name='{% csrf_token %}' value='3UOQiRT1Eu6JuqIB1ZOBDcjOZRVZ8VBV7qn2NjX4DR9YAZ92KrwXgwUZ1YIpKg1Z' />
 
         <br><br>
-        <h2 align="center">Alterações de Informações</h2>
+
+        <h2 align="center">Alterar Informações</h2>
 
         <div class="form-group">
-            <label for="username" class="col-sm-3 control-label">Nome Completo</label>
+            <label class="col-sm-3 control-label">Nome Completo</label>
             <div class="col-sm-9">
-                <input type="text" id="username" placeholder="Nome Completo"
-                       maxlength="40" required class="form-control" autofocus name="username"
-                       value="{{user.first_name}}"
-                >
+                {{form.first_name}}
                 <span class="help-block">Deseja Trocar o Nome?</span>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="email" class="col-sm-3 control-label">Email</label>
-                <div class="col-sm-9">
-                    <input type="email" id="email" placeholder="Email"
-                           maxlength="40" required class="form-control" name="email"
-                           value="{{user.email}}"
-                    >
-                    <span class="help-block">Desejar Trocar o Email?</span>
-                </div>
-        </div>
-
-        <div class="form-group">
-            <label for="registration" class="col-sm-3 control-label">Matrícula</label>
+            <label class="col-sm-3 control-label">Email</label>
             <div class="col-sm-9">
-                <input type="text" id="registration" placeholder="Matrícula"
-                       maxlength="14" disabled class="form-control" autofocus name="registration"
-                       value="{{user.username}}">
-                <span class="help-block">Insira a sua matrícula</span>
+                {{form.email}}
+                <span class="help-block">Deseja Trocar o Email?</span>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="password" class="col-sm-3 control-label">Senha</label>
+            <label class="col-sm-3 control-label">Matrícula</label>
             <div class="col-sm-9">
-                <input type="password" id="password" placeholder="Senha"
-                       maxlength="14" disabled required value="{{user.password}}" class="form-control" name="password">
-                <span class="help-block">Senha</span>
+                {{form.username}}
+                <span class="help-block">Não é possível alterar a matrícula</span>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
-                <button type="submit" class="btn btn-success btn-block">Alterar Informações</button>
-                <a href="/dadosAluno" class="btn btn-warning btn-block">Cancelar</a>
+                <button type="submit" class="btn btn-success btn-block">Alterar</button>
+                <a href="/" class="btn btn-warning btn-block">Cancelar</a>
             </div>
         </div>
     </form>
 </div>
-

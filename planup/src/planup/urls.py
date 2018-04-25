@@ -16,5 +16,5 @@ urlpatterns = [
     url(r'^$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^novoAluno/$', views.create_student, name="student_new"),
-    url(r'^editarAluno/$', views.edit_student, name="student_edit"),
+    url(r'^editarAluno/(?P<pk>\d+)$', views.StudentUpdate.as_view(), name="student_edit"),
 ]

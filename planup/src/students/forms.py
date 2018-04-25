@@ -1,7 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django.contrib.auth.models import User
-
 
 class RegisterStudentForm(UserCreationForm):
 
@@ -13,29 +12,25 @@ class RegisterStudentForm(UserCreationForm):
         fields = ('username', 'registration', 'password1', 'password2',"email","first_name")
 
 
-class EditStudentForm(forms.ModelForm):
+class EditStudentForm(UserChangeForm):
 
-    registration = forms.CharField(max_length=14)
-    username = forms.CharField(max_length=40)
-    email = forms.EmailField(max_length=40)
-    first_name = forms.CharField(max_length=40)
+    first_name = forms.CharField(max_length=14, widget=forms.TextInput(
+        attrs= {
+            "class" :"form-control"
+        }
+    ), required=True)
+    email = forms.EmailField(max_length=40, widget=forms.TextInput(
+        attrs= {
+            "class": "form-control"
+        }
+    ), required=True)
 
+    username = forms.CharField(max_length=10, widget=forms.TextInput(
+        attrs= {
+            "class": "form-control"
+        }
+    ),disabled=True)
     class Meta:
 
         model = User
-        fields = ('username', 'registration',"email", "first_name")
-
-    def save(self, commit=True):
-
-        user = super(EditStudentForm, self).save(commit=False)
-        user.email = self.cleaned_data["email"]
-        user.refresh_from_db()
-        user.profile.registration = self.cleaned_data.get("registration")
-        user.username = self.cleaned_data.get("username")
-        user.first_name = user.username
-        user.username = user.profile.registration
-
-        if commit:
-            user.save()
-
-        return user
+        fields = ('username', 'password',"email", "first_name")
