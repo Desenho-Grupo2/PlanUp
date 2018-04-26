@@ -5,6 +5,7 @@
   <h2>Bem vindo ,{{ user.first_name}}</small>!</h2>
   <p>Matrícula: {{ user.username }}</p>
 
-<a href="{% url "student_edit" user.id%}">Editar</a>
+<a href="{% url "student_edit" user.id %}">Editar</a>
 <a href="{% url 'logout' %}">logout</a>
+<a href="{% url "student_delete" user.id %}">Excluir</a>
 {% endblock %}

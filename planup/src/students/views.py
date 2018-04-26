@@ -1,20 +1,13 @@
-from django.views.generic import CreateView,UpdateView
+from django.views.generic import UpdateView,DeleteView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
-from django.contrib.auth import logout
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render_to_response
-from django.http import HttpResponse
 from django.shortcuts import render
 
 from .forms import RegisterStudentForm,EditStudentForm
-from .models import Student
 
 @login_required
 def show_student(request):
-
-
 
     return render(request, 'students/student_show.html')
 
@@ -50,27 +43,11 @@ class StudentUpdate(UpdateView):
     def get_success_url(self):
         return reverse_lazy('show_student')
 
-@login_required
-def edit_student(request):
+class StudentDelete(DeleteView):
 
-    if request.method == "POST":
+    model = EditStudentForm.Meta.model
+    template_name = "students/student_delete.html"
 
-        form = EditStudentForm(request.POST, instance=request.user)
+    def get_success_url(self):
 
-        if form.is_valid():
-
-            user = form.save()
-            user.refresh_from_db()
-            user.profile.registration = form.cleaned_data.get("registration")
-            user.username = form.cleaned_data.get("username")
-            user.first_name = user.username
-            user.username = user.profile.registration
-            user.save()
-
-            return redirect(request, "students/student_show.html")
-
-    else:
-
-        form = EditStudentForm(request.POST, instance=request.user)
-
-    return render(request, "students/student_edit.html", {"form": form})
+        return reverse_lazy('logout')
