@@ -20,67 +20,18 @@
     <p><a href="#">Mandar email para o professor</a></p>
   </div>
   <div class="col-sm-7">
-
-    <div class="row">
-      <div class="col-sm-3">
+    <div class="list-group">
         <div class="well">
-         <p>Nome</p>
+            <h4 class="list-group-item-heading">Suas informações</h4>
         </div>
-      </div>
-      <div class="col-sm-9">
-        <div class="well">
-          <p>{{student.name_student}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="well">
-         <p>Matricula</p>
-        </div>
-      </div>
-      <div class="col-sm-9">
-        <div class="well">
-          <p>{{student.registration_student}}</p>
-        </div>
-      </div>
-    </div>
-  <div class="row">
-    <div class="col-sm-3">
       <div class="well">
-       <p>Email</p>
+        <h4 class="list-group-item-heading">Nome: {{student.name_student}}</h4>
+        <h4 class="list-group-item-heading"><p>Matricula: {{student.registration_student}}</p></h4>
+        <h4 class="list-group-item-heading"><p>Email: {{student.email_student}}</p></h4>
+        <h4 class="list-group-item-heading"><p>Data de aniversario: {{student.age_of_birth_student}}</p></h4>
+        <h4 class="list-group-item-heading">Gênero: {{student.gender_student}}</h4>
       </div>
     </div>
-    <div class="col-sm-9">
-      <div class="well">
-        <p>{{student.email_student}}</p>
-      </div>
-    </div>
-  </div>
-<div class="row">
-  <div class="col-sm-3">
-    <div class="well">
-     <p>Data de nascimento</p>
-    </div>
-  </div>
-  <div class="col-sm-9">
-    <div class="well">
-      <p>{{student.age_of_birth_student}}</p>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-    <div class="well">
-     <p>Sexo</p>
-    </div>
-  </div>
-  <div class="col-sm-9">
-    <div class="well">
-      <p>{{student.gender_student}}</p>
-    </div>
-  </div>
-</div>
 </div>
   {% include "task_sidebar.html" %}
 </div>
