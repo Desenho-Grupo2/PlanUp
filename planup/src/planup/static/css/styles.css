@@ -1,0 +1,23 @@
+body {
+    font-family: "Arial", Georgia, Serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Arial";
+    letter-spacing: 5px;
+}
+
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+.navbar-brand {
+    color: #FBF9F9;
+}
