@@ -27,7 +27,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'planup.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
