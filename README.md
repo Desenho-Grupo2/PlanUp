@@ -6,7 +6,7 @@
 
 Para os depois métodos de executar a aplicação é necessário clonar o repositório e entrar na pasta raiz:<br>
 
-          $ git clone https://github.com/Desenho-Grupo2/welcometotheDjango.git
+          $ git clone https://github.com/Desenho-Grupo2/PlanUp.git
           $ cd PlanUp/
 
 Agora há duas opções: utilizando Docker (recomendado) ou pip + ambiente virtual do Python.
