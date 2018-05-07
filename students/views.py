@@ -36,7 +36,7 @@ def create_student(request):
             return redirect('/')
         else:
             print('Form is NOT VALID.')
-            print('Form = {}'.format(form.errors))
+            print('Form.errors = {}'.format(form.errors))
     else:
 
         form = RegisterStudentForm()
