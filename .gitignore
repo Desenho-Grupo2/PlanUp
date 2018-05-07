@@ -2,3 +2,10 @@
 __pycache__/
 */__pycache__/
 *.pyc
+
+# Migrations
+*/migrations/*_initial.py
+
+## IDEs
+*.swp
+.idea*

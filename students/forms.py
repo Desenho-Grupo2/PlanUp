@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django.contrib.auth.models import User
 
+
 class RegisterStudentForm(UserCreationForm):
 
     registration = forms.CharField(max_length=14)
@@ -9,7 +10,7 @@ class RegisterStudentForm(UserCreationForm):
     class Meta:
 
         model = User
-        fields = ('username', 'registration', 'password1', 'password2',"email","first_name")
+        fields = ('username', 'registration', 'password1', 'password2', 'email', 'first_name')
 
 
 class EditStudentForm(UserChangeForm):
