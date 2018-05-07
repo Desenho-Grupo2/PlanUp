@@ -16,9 +16,6 @@ def show_student(request):
 def create_student(request):
 
     if request.method == 'POST':
-        print('\nCreating student [POST]....\n')
-        print('.POST = {}'.format(request.POST))
-
         form = RegisterStudentForm(request.POST)
 
         if form.is_valid():
@@ -31,12 +28,9 @@ def create_student(request):
             user.username = user.profile.registration
             user.save()
 
-            print('Form is VALID.')
-
             return redirect('/')
         else:
             print('Form is NOT VALID.')
-            print('Form.errors = {}'.format(form.errors))
     else:
 
         form = RegisterStudentForm()
