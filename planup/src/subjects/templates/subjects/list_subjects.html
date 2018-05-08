@@ -12,8 +12,7 @@
 
 <body>
     <ul>
-        <br>
-        <br>
+        <br><br>
         <br> {% for subject in subjects %}
         <a href="{% url 'update_subject' subject.id%}">
             <li>{{subject.subject_name}}</li>
