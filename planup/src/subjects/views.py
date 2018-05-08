@@ -33,7 +33,7 @@ def update_subject(request, id):
         subject_form.save()
         return redirect('list_subject')
 
-    return render(request, 'subjects/new_subject.html', {'subject_form': subject_form, 'subject': subject})
+    return render(request, 'subjects/update_subject.html', {'subject_form': subject_form, 'subject': subject})
 
 
 def delete_subject(request, id):
@@ -43,4 +43,4 @@ def delete_subject(request, id):
         subject.delete()
         return redirect('list_subject')
 
-    return render(request, 'subjects/delete_confirm_subeject.html', {'subject': subject})
+    return render(request, 'subjects/delete_confirm_subject.html', {'subject': subject})
