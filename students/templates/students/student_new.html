@@ -1,0 +1,63 @@
+{% include "navbar.html" %}
+
+<div class="container">
+    <form method="post" class="form-horizontal" role="form">{% csrf_token %}
+        <input type='hidden' name='{% csrf_token %}' value='3UOQiRT1Eu6JuqIB1ZOBDcjOZRVZ8VBV7qn2NjX4DR9YAZ92KrwXgwUZ1YIpKg1Z' />
+
+        <br><br>
+
+        <h2 align="center">Cadastro de Aluno</h2>
+        <div class="form-group">
+            <label for="username" class="col-sm-3 control-label">Nome Completo</label>
+            <div class="col-sm-9">
+                <input type="text" id="username" placeholder="Nome Completo"
+                       maxlength="40" required class="form-control" autofocus name="username">
+                <span class="help-block">Insira o seu nome completo</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" id="email" placeholder="Email"
+                           maxlength="40" required class="form-control" name="email">
+                    <span class="help-block">Insira o seu email</span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="registration" class="col-sm-3 control-label">Matrícula</label>
+            <div class="col-sm-9">
+                <input type="text" id="registration" placeholder="Matrícula"
+                       maxlength="14" required class="form-control" autofocus name="registration">
+                <span class="help-block">Insira a sua matrícula</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password1" class="col-sm-3 control-label">Senha</label>
+            <div class="col-sm-9">
+                <input type="password" id="password1" placeholder="Senha"
+                       maxlength="14" required class="form-control" name="password1">
+                <span class="help-block">Senha</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password2" class="col-sm-3 control-label">Senha</label>
+            <div class="col-sm-9">
+                <input type="password" id="password2" placeholder="Repita a senha"
+                       maxlength="14" required class="form-control" name="password2">
+                <span class="help-block">Repita a senha</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+                <a href="/" class="btn btn-warning btn-block">Cancelar Registro</a>
+                <button type="reset" class="btn btn-info btn-block">Limpar Campos</button>
+            </div>
+        </div>
+    </form>
+</div>
