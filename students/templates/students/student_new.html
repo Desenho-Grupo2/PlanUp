@@ -49,6 +49,12 @@
                 <input type="password" id="password2" placeholder="Repita a senha"
                        maxlength="14" required class="form-control" name="password2">
                 <span class="help-block">Repita a senha</span>
+
+                 {% for error in form.password2.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                 {% endfor %}
             </div>
         </div>
 

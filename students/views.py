@@ -6,15 +6,16 @@ from django.shortcuts import render
 
 from .forms import RegisterStudentForm,EditStudentForm
 
+
 @login_required
 def show_student(request):
 
     return render(request, 'students/student_show.html')
 
+
 def create_student(request):
 
     if request.method == 'POST':
-
         form = RegisterStudentForm(request.POST)
 
         if form.is_valid():
@@ -28,6 +29,8 @@ def create_student(request):
             user.save()
 
             return redirect('/')
+        else:
+            print('Form is NOT VALID.')
     else:
 
         form = RegisterStudentForm()
