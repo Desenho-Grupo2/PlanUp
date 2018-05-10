@@ -1,0 +1,41 @@
+{% include "navbar.html" %}
+
+<div class="container">
+    <form method="post" class="form-horizontal" role="form" align="center">{% csrf_token %}
+      <input type='hidden' name='{% csrf_token %}' value='3UOQiRT1Eu6JuqIB1ZOBDcjOZRVZ8VBV7qn2NjX4DR9YAZ92KrwXgwUZ1YIpKg1Z' />
+      <h2 align="center">Cadastro de Disciplina</h2>
+      <div class="form-group">
+          <label for="id_subject_name" class="col-sm-3 control-label">Nome</label>
+          <div class="col-sm-9">
+              <input type="text" id="id_subject_name" placeholder="Nome" maxlength="40" required class="form-control" autofocus
+                  name="subject_name">
+              <span class="help-block">Insira o nome da disciplina</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="id_subject_absence" class="col-sm-3 control-label">Número de faltas</label>
+          <div class="col-sm-9">
+              <input type="number" id="id_email_student" placeholder="Number" maxlength="3" required class="form-control" name="subject_absence">
+              <span class="help-block">Insira o número de faltas</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="id_number_credits" class="col-sm-3 control-label">Número de créditos</label>
+          <div class="col-sm-9">
+              <input type="number" id="id_number_credits" placeholder="Número de créditos" maxlength="3" required class="form-control" autofocus
+                  name="number_credits">
+              <span class="help-block">Insira o número de créditos</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <div class="col-sm-9 col-sm-offset-3">
+              <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+              <a href="/listSubject" class="btn btn-warning btn-block">Cancelar Registro</a>
+              <button type="reset" class="btn btn-info btn-block">Limpar Campos</button>
+          </div>
+      </div>
+  </form>
+</div>
