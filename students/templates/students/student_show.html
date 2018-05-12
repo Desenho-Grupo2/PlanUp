@@ -9,3 +9,20 @@
 <a href="{% url 'logout' %}">logout</a>
 <a href="{% url "student_delete" user.id %}">Excluir</a>
 {% endblock %}
+
+<body>
+    <ul>
+        <br><br>
+        <br>
+        {% for student in subjects %}
+            {% for item in student.student_set.all %}
+                <a href="{% url 'subjects' item_id=item.id %}">{{item.subject_name}}</a>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+    <a href="{% url 'new_subject'%}">new subject</a>
+
+    </br>
+    </br>
+    </br>
+</body>

@@ -1,19 +1,19 @@
-from django.views.generic import ListView
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render,redirect
 
 from subjects.models import Subject
 from .forms import SubjectForm
-import subjects
-
 
 def create_subject(request):
 
+    student = request.user
     subject_form = SubjectForm(request.POST or None)
 
     if subject_form.is_valid():
+
+        subject_form.Meta.model.student = student.id
         subject_form.save()
-        return redirect('list_subject')
+
+        return redirect('/dadosAluno')
 
     return render(request, 'subjects/new_subject.html', {'subject_form': subject_form})
 
