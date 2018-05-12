@@ -1,14 +1,23 @@
 {% include "navbar.html" %}
-{% block content %}
-    <br>
-    <br>
-  <h2>Bem vindo ,{{ user.first_name}}</small>!</h2>
-  <p>Matrícula: {{ user.username }}</p>
+{% load staticfiles %}
 
-<a href="{% url "student_edit" user.id %}">Editar</a>
-<a href="{% url 'logout' %}">logout</a>
-<a href="{% url "student_delete" user.id %}">Excluir</a>
-{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<div class="container" >
+
+    <br> <br>
+    <h1>Informações do Aluno</h1>
+    <h2>Bem vindo,{{ user.first_name}}</h2>
+    <h2>Matrícula: {{ user.username }}</h2>
+</div>
+
+<div class="container">
+
+    <br><br>
+
+    <h1>Lista de Matérias Cursando</h1>
+
+
+</div>
 
 <body>
     <ul>

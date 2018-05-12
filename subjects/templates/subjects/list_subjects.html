@@ -1,19 +1,35 @@
 {% include "navbar.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-<body>
-    <ul>
-        <br><br>
-        <br> {% for subject in subjects %}
-        <a href="{% url 'update_subject' subject.id%}">
-            <li>{{subject.subject_name}}</li>
-        </a>
+<br><br>
+
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+            <th>Disciplina</th>
+            <th>Quantidade de Créditos</th>
+            {% if user.username == "victor" %}
+                <th>Editar</th>
+                <th>Apagar</th>
+            {% else %}
+                <th>Desejar Adicionar disciplina?</th>
+            {% endif %}
+        </tr>
+
+        {% for subject in subjects %}
+        <tr>
+            <td align="center">{{subject.subject_name}}</td>
+            <td align="center">{{subject.number_credits}}</td>
+            {% if user.username == "victor" %}
+                <td align="center"><a href="{% url 'update_subject' subject.id %}" class="btn btn-warning btn-block">Alterar</a></td>
+                <td align="center"><a href="{% url 'delete_subject' subject.id %}" class="btn btn-danger btn-block">Deletar</a></td>
+            {% else %}
+                <td align="center"><a href="{% url 'delete_subject' subject.id %}" class="btn btn-success btn-block">Adicionar</a></td>
+            {% endif %}
+        </tr>
         {% endfor %}
-    </ul>
-    <a href="{% url 'new_subject'%}">new subject</a>
-
-    </br>
-    </br>
-    </br>
-</body>
-
-</html>
+      </thead>
+    </table>
+</div>

@@ -30,18 +30,28 @@
                     <div class="w3-dropdown-hover w3-hide-small w3-hover-white">
                         <button class="w3-button w3-hover-white">Perfil <i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                            <a href="#" class="w3-bar-item w3-button">Editar Perfil</a>
+                            <a href="{% url "student_edit" user.id %}" class="w3-bar-item w3-button">Editar Perfil</a>
                         </div>
                     </div>
 
+                    {% if user.username == "victor" %}
+                        <div class="w3-dropdown-hover w3-hide-small w3-hover-white">
+                            <button class="w3-button w3-hover-white">Disciplina <i class="fa fa-caret-down"></i></button>
+                            <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                                <a href="{% url 'new_subject'%}" class="w3-bar-item w3-button">Nova Disciplina</a>
+                                <a href="#" class="w3-bar-item w3-button">Editar Disciplinas</a>
+                                <a href="/listSubject" class="w3-bar-item w3-button">Lista de Disciplinas</a>
+                            </div>
+                        </div>
+                    {% else %}
                     <div class="w3-dropdown-hover w3-hide-small w3-hover-white">
                         <button class="w3-button w3-hover-white">Disciplina <i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                             <a href="#" class="w3-bar-item w3-button">Minhas Disciplinas</a>
-                            <a href="#" class="w3-bar-item w3-button">Lista de Disciplinas</a>
+                            <a href="/listSubject" class="w3-bar-item w3-button">Lista de Disciplinas</a>
                         </div>
                     </div>
-
+                    {% endif %}
                     <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-indigo w3-right w3-hover-white">
                           <i class="w3-margin-right"></i>SAIR
                     </a>
