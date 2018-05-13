@@ -51,18 +51,6 @@ def delete_subject(request, id):
 
     return render(request, "subjects/delete_confirm_subject.html", {"subject": subject})
 
-
-def add_subject_student(request, pk):
-
-    student = Student.objects.get(pk=request.user.id)
-    subjects = Subject.objects.get(pk=pk)
-
-    student.subject_set.add(subjects)
-    student_list = student.subject_set.all()
-
-    return render(request, "subjects/my_subjects_list.html", {"subjects": student_list})
-
-
 def remove_subject_student(request, pk):
 
     student = Student.objects.get(pk=request.user.id)
