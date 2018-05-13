@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.urls import path
 
 from students import views
-from subjects.views import list_subject, create_subject, update_subject, delete_subject
+from subjects.views import list_subject, create_subject, update_subject, delete_subject, add_subject_student,remove_subject_student,my_subjects
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -16,6 +16,9 @@ urlpatterns = [
     url(r'^deletarAluno/(?P<pk>\d+)$', views.StudentDelete.as_view(), name='student_delete'),
     path('newSubject/', create_subject, name="new_subject"),
     path('listSubject/', list_subject, name='list_subject'),
+    path('adicionarDisciplina/<int:pk>/', add_subject_student, name="adicionar_disciplina"),
+    path('removerDisciplina/<int:pk>/', remove_subject_student, name="remover_disciplina"),
+    path('minhasMaterias/', my_subjects, name="minhas_disciplinas"),
     path('updateSubject/<int:id>', update_subject, name="update_subject"),
     path('delete/<int:id>', delete_subject, name='delete_subject')
 ]

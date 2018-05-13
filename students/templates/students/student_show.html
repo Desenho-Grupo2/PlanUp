@@ -9,29 +9,3 @@
     <h2>Bem vindo,{{ user.first_name}}</h2>
     <h2>Matrícula: {{ user.username }}</h2>
 </div>
-
-<div class="container">
-
-    <br><br>
-
-    <h1>Lista de Matérias Cursando</h1>
-
-
-</div>
-
-<body>
-    <ul>
-        <br><br>
-        <br>
-        {% for student in subjects %}
-            {% for item in student.student_set.all %}
-                <a href="{% url 'subjects' item_id=item.id %}">{{item.subject_name}}</a>
-            {% endfor %}
-        {% endfor %}
-    </ul>
-    <a href="{% url 'new_subject'%}">new subject</a>
-
-    </br>
-    </br>
-    </br>
-</body>
