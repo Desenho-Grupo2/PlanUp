@@ -14,11 +14,11 @@ urlpatterns = [
     url(r'^novoAluno/$', views.create_student, name="student_new"),
     url(r'^editarAluno/(?P<pk>\d+)$', views.StudentUpdate.as_view(), name="student_edit"),
     url(r'^deletarAluno/(?P<pk>\d+)$', views.StudentDelete.as_view(), name='student_delete'),
-    path('newSubject/', create_subject, name="new_subject"),
-    path('listSubject/', list_subject, name='list_subject'),
+    path('novaDisciplina/', create_subject, name="new_subject"),
+    path('listaDeDisciplinas/', list_subject, name='list_subject'),
     path('adicionarDisciplina/<int:pk>/', add_subject_student, name="adicionar_disciplina"),
     path('removerDisciplina/<int:pk>/', remove_subject_student, name="remover_disciplina"),
     path('minhasMaterias/', my_subjects, name="minhas_disciplinas"),
-    path('updateSubject/<int:id>', update_subject, name="update_subject"),
-    path('delete/<int:id>', delete_subject, name='delete_subject')
+    path('alterarDisciplinas/<int:id>', update_subject, name="update_subject"),
+    path('excluirDisciplinas/<int:id>', delete_subject, name='delete_subject')
 ]

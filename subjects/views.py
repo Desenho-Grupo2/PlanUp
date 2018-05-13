@@ -10,9 +10,10 @@ def create_subject(request):
     subject_form = SubjectForm(request.POST or None)
 
     if subject_form.is_valid():
+
         subject_form.save()
 
-        return redirect("/dadosAluno")
+        return redirect("list_subject")
 
     return render(request, "subjects/new_subject.html", {"subject_form": subject_form})
 
@@ -25,10 +26,12 @@ def list_subject(request):
 
 
 def update_subject(request, id):
+
     subject = Subject.objects.get(id=id)
     subject_form = SubjectForm(request.POST or None, instance=subject)
 
     if subject_form.is_valid():
+
         subject_form.save()
         return redirect("list_subject")
 
@@ -40,6 +43,7 @@ def delete_subject(request, id):
     subject = Subject.objects.get(id=id)
 
     if request.method == "POST":
+
         subject.delete()
         return redirect("list_subject")
 

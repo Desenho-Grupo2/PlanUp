@@ -1,5 +1,9 @@
+{% include "navbar.html" %}
+{% load staticfiles %}
+
+<br><br>
 <form method="post" class="form-horizontal" role="form">{% csrf_token %}
         <input type='hidden' name='{% csrf_token %}'>
-        Are you sure you want to delete "{{ user.first_name }}" ?
-    <input type="submit" value="Submit" />
+        <h2>Tem certeza que deseja excluir o estudante "{{ user.first_name }}" ?</h2>
+    <input type="submit" value="Confirmar" />
 </form>

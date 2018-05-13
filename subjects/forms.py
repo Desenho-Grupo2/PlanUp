@@ -10,4 +10,4 @@ class SubjectForm(forms.ModelForm):
                   "subject_absence",
                   "number_credits",
                   "status",
-                  )
+                  "subject_code",)

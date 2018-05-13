@@ -8,6 +8,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
+            <th align="center">Código</th>
             <th align="center">Disciplina</th>
             <th align="center">Quantidade de Créditos</th>
             {% if user.username == "victor" %}
@@ -20,6 +21,7 @@
 
         {% for subject in subjects %}
         <tr>
+            <td align="center">{{subject.subject_code}}</td>
             <td align="center">{{subject.subject_name}}</td>
             <td align="center">{{subject.number_credits}}</td>
             {% if user.username == "victor" %}
