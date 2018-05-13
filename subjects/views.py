@@ -11,7 +11,9 @@ def create_subject(request):
 
     if subject_form.is_valid():
 
-        subject_form.save()
+        subject = subject_form.save()
+        student = Student.objects.get(pk=request.user.id)
+        student.subject_set.add(subject)
 
         return redirect("list_subject")
 
