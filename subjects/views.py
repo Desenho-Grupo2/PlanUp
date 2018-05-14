@@ -58,7 +58,7 @@ def remove_subject_student(request, pk):
     subject.delete()
 
     student_list = student.subject_set.all()
-    return render(request, "subjects/my_subjects_list.html", {"subjects": student_list})
+    return redirect('minhas_disciplinas')
 
 def my_subjects(request):
 

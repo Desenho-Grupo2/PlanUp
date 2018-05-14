@@ -15,9 +15,10 @@ urlpatterns = [
     url(r'^editarAluno/(?P<pk>\d+)$', views.StudentUpdate.as_view(), name="student_edit"),
     url(r'^deletarAluno/(?P<pk>\d+)$', views.StudentDelete.as_view(), name='student_delete'),
     path('novaDisciplina/', create_subject, name="new_subject"),
-    path('listaDeDisciplinas/', list_subject, name='list_subject'),
     path('removerDisciplina/<int:pk>/', remove_subject_student, name="remover_disciplina"),
     path('minhasDisciplinas/', my_subjects, name="minhas_disciplinas"),
     path('alterarDisciplinas/<int:id>', update_subject, name="update_subject"),
-    path('excluirDisciplinas/<int:id>', delete_subject, name='delete_subject')
+    
+#    path('excluirDisciplinas/<int:id>', delete_subject, name='delete_subject')
+#    path('listaDeDisciplinas/', list_subject, name='list_subject'),
 ]
