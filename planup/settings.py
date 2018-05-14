@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'accounts',
     'planup',
     'subjects',
+    'tasks',
 ]
 
 MIDDLEWARE = [

@@ -18,6 +18,7 @@ urlpatterns = [
     path('removerDisciplina/<int:pk>/', remove_subject_student, name="remover_disciplina"),
     path('minhasDisciplinas/', my_subjects, name="minhas_disciplinas"),
     path('alterarDisciplinas/<int:id>', update_subject, name="update_subject"),
+    path('novaTarefa/', name="new_task")
     
 #    path('excluirDisciplinas/<int:id>', delete_subject, name='delete_subject')
 #    path('listaDeDisciplinas/', list_subject, name='list_subject'),

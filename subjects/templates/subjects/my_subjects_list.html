@@ -13,6 +13,7 @@
             <th align="center">Quantidade de Créditos</th>
             <th align="center">Editar</th>
             <th align="center">Apagar</th>
+            <th align="center">Nova Tarefa</th>
         </tr>
 
         {% for subject in subjects %}
@@ -22,6 +23,7 @@
             <td align="center">{{subject.number_credits}}</td>
             <td align="center"><a href="{% url 'update_subject' subject.id %}" class="btn btn-warning btn-block">Alterar</a></td>
             <td align="center"><a href="{% url 'remover_disciplina' subject.id%}" class="btn btn-danger btn-block">Remover</a></td>
+            <td align="center"><a href="{% url 'remover_disciplina' subject.id%}" class="btn btn-success btn-block">Nova Tarefa</a></td>
         </tr>
         {% endfor %}
       </thead>
