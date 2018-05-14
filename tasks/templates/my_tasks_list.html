@@ -1,0 +1,28 @@
+{% include "navbar.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<br><br><br>
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+            <th align="center">Nome</th>
+            <th align="center">Texto</th>
+            <th align="center">Editar</th>
+            <th align="center">Apagar</th>
+        </tr>
+
+        {% for task in tasks %}
+        <tr>
+            <td align="center">{{task.task_name}}</td>
+            <td align="center">{{task.task_text}}</td>
+            <td align="center"><a href="{% url 'task_update' task.id %}" class="btn btn-warning btn-block">Alterar</a></td>
+            <td align="center"><a href="{% url 'task_delete' task.id%}" class="btn btn-danger btn-block">Excluir</a></td>
+        </tr>
+        {% endfor %}
+      </thead>
+    </table>
+
+    <button> <a href="{% url 'new_task_student'%}" class="w3-bar-item w3-button">Nova Tarefa</a></button>
+</div>

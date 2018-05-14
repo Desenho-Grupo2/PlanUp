@@ -27,7 +27,7 @@ def list_subject(request):
     return render(request, "subjects/list_subjects.html", {"subjects": subjects})
 
 
-def update_subject(request, id):
+def update_subject(request,id):
 
     subject = Subject.objects.get(id=id)
     subject_form = SubjectForm(request.POST or None, instance=subject)
@@ -40,7 +40,7 @@ def update_subject(request, id):
     return render(request, "subjects/update_subject.html", {"subject_form": subject_form, "subject": subject})
 
 
-def delete_subject(request, id):
+def delete_subject(request,id):
 
     subject = Subject.objects.get(id=id)
 
@@ -51,13 +51,11 @@ def delete_subject(request, id):
 
     return render(request, "subjects/delete_confirm_subject.html", {"subject": subject})
 
-def remove_subject_student(request, pk):
+def remove_subject_student(request,pk):
 
-    student = Student.objects.get(pk=request.user.id)
     subject = Subject.objects.get(pk=pk)
     subject.delete()
 
-    student_list = student.subject_set.all()
     return redirect('minhas_disciplinas')
 
 def my_subjects(request):
