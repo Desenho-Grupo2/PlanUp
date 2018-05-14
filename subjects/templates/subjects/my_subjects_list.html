@@ -4,6 +4,7 @@
 
 <br><br>
 <br><br>
+
 <div class="container">
     <table class="table table-bordered">
       <thead>
@@ -23,7 +24,7 @@
             <td align="center">{{subject.number_credits}}</td>
             <td align="center"><a href="{% url 'update_subject' subject.id %}" class="btn btn-warning btn-block">Alterar</a></td>
             <td align="center"><a href="{% url 'remover_disciplina' subject.id%}" class="btn btn-danger btn-block">Remover</a></td>
-            <td align="center"><a href="{% url 'remover_disciplina' subject.id%}" class="btn btn-success btn-block">Nova Tarefa</a></td>
+            <td align="center"><a href="{% url 'new_task' subject.id%}" class="btn btn-success btn-block">Nova Tarefa</a></td>
         </tr>
         {% endfor %}
       </thead>

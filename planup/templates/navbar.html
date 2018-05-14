@@ -30,7 +30,7 @@
                     <div class="w3-dropdown-hover w3-hide-small w3-hover-white">
                         <button class="w3-button w3-hover-white">Perfil <i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                            <a href="{% url "student_edit" user.id %}" class="w3-bar-item w3-button">Editar Perfil</a>
+                            <a href="{% url 'student_edit' user.id%}" class="w3-bar-item w3-button">Editar Perfil</a>
                         </div>
                     </div>
 
@@ -39,6 +39,14 @@
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                             <a href="{% url 'new_subject'%}" class="w3-bar-item w3-button">Nova Disciplina</a>
                             <a href="{% url 'minhas_disciplinas'%}" class="w3-bar-item w3-button">Minhas Disciplinas</a>
+                        </div>
+                    </div>
+
+                    <div class="w3-dropdown-hover w3-hide-small w3-hover-white">
+                        <button class="w3-button w3-hover-white">Tarefa <i class="fa fa-caret-down"></i></button>
+                        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                            <a href="{% url 'new_task_student'%}" class="w3-bar-item w3-button">Nova Tarefa</a>
+                            <a href="{% url 'task_list'%}" class="w3-bar-item w3-button">Minhas Tarefas</a>
                         </div>
                     </div>
 
