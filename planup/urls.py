@@ -19,6 +19,10 @@ urlpatterns = [
     path('removerDisciplina/<int:pk>/', subjects_views.remove_subject_student, name="remover_disciplina"),
     path('minhasDisciplinas/', subjects_views.my_subjects, name="minhas_disciplinas"),
     path('alterarDisciplinas/<int:id>', subjects_views.update_subject, name="update_subject"),
+]
+
+# Tasks
+urlpatterns += [
     path('novaTarefaDisciplina/<int:subject_pk>',task_views.create_task_subject, name="new_task"),
     path('novaTarefa/',task_views.create_task_student, name="new_task_student"),
     path('minhasTarefas/', task_views.task_list, name="task_list"),
