@@ -3,7 +3,18 @@
 <div class="container">
     <form method="post" class="form-horizontal" role="form" align="center">{% csrf_token %}
       <input type='hidden' name='{% csrf_token %}' value='3UOQiRT1Eu6JuqIB1ZOBDcjOZRVZ8VBV7qn2NjX4DR9YAZ92KrwXgwUZ1YIpKg1Z' />
+        <br><br>
       <h2 align="center">Cadastro de Disciplina</h2>
+
+      <div class="form-group">
+          <label for="id_subject_code" class="col-sm-3 control-label">Código</label>
+          <div class="col-sm-9">
+              <input type="text" id="id_subject_code" placeholder="Código" maxlength="6" required class="form-control" autofocus
+                name="subject_code">
+              <span class="help-block">Insira o código da disciplina</span>
+          </div>
+      </div>
+
       <div class="form-group">
           <label for="id_subject_name" class="col-sm-3 control-label">Nome</label>
           <div class="col-sm-9">
@@ -33,7 +44,7 @@
       <div class="form-group">
           <div class="col-sm-9 col-sm-offset-3">
               <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
-              <a href="/listSubject" class="btn btn-warning btn-block">Cancelar Registro</a>
+              <a href="/dadosAluno" class="btn btn-warning btn-block">Cancelar Registro</a>
               <button type="reset" class="btn btn-info btn-block">Limpar Campos</button>
           </div>
       </div>

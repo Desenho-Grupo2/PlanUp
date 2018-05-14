@@ -1,4 +1,5 @@
 {% include "navbar.html" %}
+{% load staticfiles %}
 
 <div class="container">
     <form method="post" class="form-horizontal" role="form" enctype="multipart/form-data">{% csrf_token %}
@@ -35,7 +36,8 @@
         <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
                 <button type="submit" class="btn btn-success btn-block">Alterar</button>
-                <a href="/" class="btn btn-warning btn-block">Cancelar</a>
+                <a href="/dadosAluno" class="btn btn-warning btn-block">Cancelar</a>
+                <a href="{% url "student_delete" user.id %}" class="btn btn-danger btn-block">Excluir Conta</a>
             </div>
         </div>
     </form>

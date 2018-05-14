@@ -1,8 +1,10 @@
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.contrib import admin
+from django.urls import path
 
 from students import views
+from subjects.views import list_subject, create_subject, update_subject, delete_subject,remove_subject_student,my_subjects
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -12,4 +14,11 @@ urlpatterns = [
     url(r'^novoAluno/$', views.create_student, name="student_new"),
     url(r'^editarAluno/(?P<pk>\d+)$', views.StudentUpdate.as_view(), name="student_edit"),
     url(r'^deletarAluno/(?P<pk>\d+)$', views.StudentDelete.as_view(), name='student_delete'),
+    path('novaDisciplina/', create_subject, name="new_subject"),
+    path('removerDisciplina/<int:pk>/', remove_subject_student, name="remover_disciplina"),
+    path('minhasDisciplinas/', my_subjects, name="minhas_disciplinas"),
+    path('alterarDisciplinas/<int:id>', update_subject, name="update_subject"),
+    
+#    path('excluirDisciplinas/<int:id>', delete_subject, name='delete_subject')
+#    path('listaDeDisciplinas/', list_subject, name='list_subject'),
 ]

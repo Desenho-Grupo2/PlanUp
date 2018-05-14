@@ -5,13 +5,17 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 from .forms import RegisterStudentForm,EditStudentForm
-
+from subjects.models import Subject
+from students.models import Student
 
 @login_required
 def show_student(request):
 
-    return render(request, 'students/student_show.html')
+    context = {
+        "subjects": Subject.objects.all()
+    }
 
+    return render(request, 'students/student_show.html',context)
 
 def create_student(request):
 

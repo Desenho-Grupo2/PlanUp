@@ -11,6 +11,8 @@
             <th align="center">Código</th>
             <th align="center">Disciplina</th>
             <th align="center">Quantidade de Créditos</th>
+            <th align="center">Editar</th>
+            <th align="center">Apagar</th>
         </tr>
 
         {% for subject in subjects %}
@@ -18,6 +20,8 @@
             <td align="center">{{subject.subject_code}}</td>
             <td align="center">{{subject.subject_name}}</td>
             <td align="center">{{subject.number_credits}}</td>
+            <td align="center"><a href="{% url 'update_subject' subject.id %}" class="btn btn-warning btn-block">Alterar</a></td>
+            <td align="center"><a href="{% url 'remover_disciplina' subject.id%}" class="btn btn-danger btn-block">Remover</a></td>
         </tr>
         {% endfor %}
       </thead>
