@@ -15,7 +15,7 @@ def create_subject(request):
         student = Student.objects.get(pk=request.user.id)
         student.subject_set.add(subject)
 
-        return redirect("list_subject")
+        return redirect("minhas_disciplinas")
 
     return render(request, "subjects/new_subject.html", {"subject_form": subject_form})
 
@@ -55,11 +55,10 @@ def remove_subject_student(request, pk):
 
     student = Student.objects.get(pk=request.user.id)
     subject = Subject.objects.get(pk=pk)
+    subject.delete()
 
-    student.subject_set.remove(subject)
     student_list = student.subject_set.all()
-
-    return render(request, "subjects/my_subjects_list.html", {"subjects":student_list})
+    return render(request, "subjects/my_subjects_list.html", {"subjects": student_list})
 
 def my_subjects(request):
 
