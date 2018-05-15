@@ -17,3 +17,11 @@ class Subject(models.Model):
 
     def get_absolute_url(self):
         return reverse('subject_edit', kwargs={'pk': self.pk})
+
+    def add_abscence(self):
+        self.subject_absence += 1
+        self.save()
+
+    def subtract_abscence(self):
+        self.subject_absence -= 1
+        self.save()

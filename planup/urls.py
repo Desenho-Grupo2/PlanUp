@@ -15,10 +15,20 @@ urlpatterns = [
     url(r'^novoAluno/$', views.create_student, name="student_new"),
     url(r'^editarAluno/(?P<pk>\d+)$', views.StudentUpdate.as_view(), name="student_edit"),
     url(r'^deletarAluno/(?P<pk>\d+)$', views.StudentDelete.as_view(), name='student_delete'),
+]
+
+# Disciplinas
+urlpatterns += [
+    path('minhasDisciplinas/', subjects_views.my_subjects, name="minhas_disciplinas"),
     path('novaDisciplina/', subjects_views.create_subject, name="new_subject"),
     path('removerDisciplina/<int:pk>/', subjects_views.remove_subject_student, name="remover_disciplina"),
-    path('minhasDisciplinas/', subjects_views.my_subjects, name="minhas_disciplinas"),
     path('alterarDisciplinas/<int:id>', subjects_views.update_subject, name="update_subject"),
+]
+
+## Faltas
+urlpatterns += [
+    path('adicionarFalta/<int:id>', subjects_views.add_abscence, name="add_abscence"),
+    path('removerFalta/<int:id>', subjects_views.subtract_abscence, name="subtract_abscence"),
 ]
 
 # Tasks
