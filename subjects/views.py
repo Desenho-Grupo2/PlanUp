@@ -35,7 +35,7 @@ def update_subject(request,id):
     if subject_form.is_valid():
 
         subject_form.save()
-        return redirect("list_subject")
+        return redirect("minhas_disciplinas")
 
     return render(request, "subjects/update_subject.html", {"subject_form": subject_form, "subject": subject})
 
@@ -64,3 +64,23 @@ def my_subjects(request):
     student_list = student.subject_set.all()
 
     return render(request, "subjects/my_subjects_list.html", {"subjects": student_list})
+
+from students.views import observer
+
+def add_abscence(request, id):
+
+    subject = Subject.objects.get(id=id)
+    subject.attach(observer)
+
+    subject.add_abscence()
+
+    return redirect('minhas_disciplinas')
+
+def subtract_abscence(request, id):
+
+    subject = Subject.objects.get(id=id)
+    subject.attach(observer)
+
+    subject.subtract_abscence()
+
+    return redirect('minhas_disciplinas')

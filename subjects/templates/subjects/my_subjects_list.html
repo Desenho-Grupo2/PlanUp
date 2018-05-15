@@ -11,6 +11,7 @@
         <tr>
             <th align="center">Código</th>
             <th align="center">Disciplina</th>
+            <th align="center">Faltas</th>
             <th align="center">Quantidade de Créditos</th>
             <th align="center">Editar</th>
             <th align="center">Apagar</th>
@@ -21,8 +22,11 @@
         <tr>
             <td align="center">{{subject.subject_code}}</td>
             <td align="center">{{subject.subject_name}}</td>
+            <td align="center"> <a href="{% url 'subtract_abscence' subject.id%}" class="btn btn-success btn-xs">-</a>
+                                {{subject.subject_absence}}
+                                <a href="{% url 'add_abscence' subject.id%}" class="btn btn-danger btn-xs">+</a> </td>
             <td align="center">{{subject.number_credits}}</td>
-            <td align="center"><a href="{% url 'update_subject' subject.id %}" class="btn btn-warning btn-block">Alterar</a></td>
+            <td align="center"><a href="{% url 'add_abscence' subject.id %}" class="btn btn-warning btn-block">Alterar</a></td>
             <td align="center"><a href="{% url 'remover_disciplina' subject.id%}" class="btn btn-danger btn-block">Remover</a></td>
             <td align="center"><a href="{% url 'new_task' subject.id%}" class="btn btn-success btn-block">Nova Tarefa</a></td>
         </tr>

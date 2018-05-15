@@ -15,6 +15,11 @@ class Task(models.Model):
     def get_absolute_url(self):
         return reverse('task_edit', kwargs={'pk': self.pk})
 
+    def __str__(self):
+        out  = 'Titulo tarefa: {}\n'.format(self.task_name)
+        out  += 'Texto tarefa: {}\n'.format(self.task_text)
+        return out
+
 class TaskSubject(Task):
 
     subject = models.ForeignKey(Subject, null=True, blank=True, on_delete=models.CASCADE)

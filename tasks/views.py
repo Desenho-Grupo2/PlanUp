@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from subjects.models import Subject,Student
 from .forms import TaskFormSubject,TaskFormStudent
-from tasks.models import Task
+from tasks.models import Task, TaskStudent, TaskSubject
 
 def create_task_subject(request,subject_pk):
 
@@ -30,7 +30,9 @@ def create_task_student(request):
         student_task = student_task_form.save(commit=False)
 
         student_task.student = student
+        print('\n\nsalvando:')
         student_task.save()
+        print('student_task = {}'.format(student_task))
 
         return redirect("task_list")
 
@@ -38,9 +40,15 @@ def create_task_student(request):
 
 def task_list(request):
 
-    tasks = Task.objects.all()
+#    tasks = Task.objects.all()
 
-    return render(request, "my_tasks_list.html", {"tasks": tasks})
+    subject_tasks = TaskSubject.objects.all()
+    student_tasks = TaskStudent.objects.all()
+
+    context = {"subject_tasks": subject_tasks,
+               "student_tasks": student_tasks}
+
+    return render(request, "my_tasks_list.html", context)
 
 def update_task(request,id):
 
