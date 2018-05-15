@@ -30,7 +30,9 @@ def create_task_student(request):
         student_task = student_task_form.save(commit=False)
 
         student_task.student = student
+        print('\n\nsalvando:')
         student_task.save()
+        print('student_task = {}'.format(student_task))
 
         return redirect("task_list")
 
@@ -40,8 +42,8 @@ def task_list(request):
 
 #    tasks = Task.objects.all()
 
-    subject_tasks = TaskStudent.objects.all()
-    student_tasks = TaskSubject.objects.all()
+    subject_tasks = TaskSubject.objects.all()
+    student_tasks = TaskStudent.objects.all()
 
     context = {"subject_tasks": subject_tasks,
                "student_tasks": student_tasks}
