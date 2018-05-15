@@ -65,9 +65,13 @@ def my_subjects(request):
 
     return render(request, "subjects/my_subjects_list.html", {"subjects": student_list})
 
+from students.views import observer
+
 def add_abscence(request, id):
 
     subject = Subject.objects.get(id=id)
+    subject.attach(observer)
+
     subject.add_abscence()
 
     return redirect('minhas_disciplinas')
@@ -75,6 +79,8 @@ def add_abscence(request, id):
 def subtract_abscence(request, id):
 
     subject = Subject.objects.get(id=id)
+    subject.attach(observer)
+
     subject.subtract_abscence()
 
     return redirect('minhas_disciplinas')

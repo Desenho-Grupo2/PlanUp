@@ -4,7 +4,19 @@
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <div class="container" >
 
+    <br><br>
+    <h2>Bem vindo,{{ user.first_name}}</h2>
     <br> <br>
+    {% if dangerous_subjects %}
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="fechar">×</a>
+        {% for subject in dangerous_subjects %}
+
+        <p><strong>Perigo: {{ subject.subject_name }}</h1></strong></p>
+
+        {% endfor %}
+        </div>
+    {% endif %}
     <h1>Informações do Aluno</h1>
     <h2>Bem vindo,{{ user.first_name}}</h2>
     <h2>Matrícula: {{ user.username }}</h2>

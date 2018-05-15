@@ -6,13 +6,20 @@ from django.shortcuts import render
 
 from .forms import RegisterStudentForm,EditStudentForm
 from subjects.models import Subject
-from students.models import Student
+from subjects.observer import SubjectConcreteObserver
+
+observer = SubjectConcreteObserver()
 
 @login_required
 def show_student(request):
 
+    print('\n\n')
+    print(observer.dangerous_subjects)
+    print('\n\n')
+
     context = {
-        "subjects": Subject.objects.all()
+        "subjects": Subject.objects.all(),
+        "dangerous_subjects": observer.dangerous_subjects
     }
 
     return render(request, 'students/student_show.html',context)
