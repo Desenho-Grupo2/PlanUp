@@ -1,0 +1,27 @@
+{% include "navbar.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<br><br>
+<br><br>
+
+<div class="container">
+    <h2 align="center"> Departamentos Darcy</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+            <th align="center">Código</th>
+            <th align="center">Sigla</th>
+            <th align="center">Denominação</th>
+        </tr>
+
+        {% for departament in departaments %}
+            <tr>
+                <td align="center">{{departament.0}}</td>
+                <td align="center">{{departament.1}}</td>
+                <td align="center">{{departament.2}}</td>
+            </tr>
+        {% endfor %}
+      </thead>
+    </table>
+</div>

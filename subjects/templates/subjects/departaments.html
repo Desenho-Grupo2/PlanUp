@@ -1,0 +1,42 @@
+{% include "navbar.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<br><br>
+<br><br>
+
+<div class="container">
+    <h2 align="center"> Disciplinas FGA</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+            <th align="center">Sigla</th>
+            <th align="center">Denominação</th>
+            <td align="center">Visualizar</td>
+        </tr>
+
+
+        <tr>
+            <td align="center">Darcy</td>
+            <td align="center">Darcy Ribeiro</td>
+            <td align="center"><a href="{% url 'departamentos_darcy' %}" class="btn btn-warning btn-block">Ver Departamentos</a></td>
+        </tr>
+        <tr>
+            <td align="center">FGA</td>
+            <td align="center"> Faculdade Gama </td>
+            <td align="center"><a href="{% url 'subjects_fga' %}" class="btn btn-success btn-block">Ver Disciplinas</a></td>
+        </tr>
+        <tr>
+            <td align="center">FCE</td>
+            <td align="center">Faculdade Ceilândia</td>
+            <td align="center"><a href="{% url 'subjects_fce' %}" class="btn btn-success btn-block">Ver Disciplinas</a></td>
+        </tr>
+        <tr>
+            <td align="center">FUP</td>
+            <td align="center">Faculdade Planaltina</td>
+            <td align="center"><a href="{% url 'subjects_fup' %}" class="btn btn-success btn-block">Ver Disciplinas</a></td>
+        </tr>
+
+      </thead>
+    </table>
+</div>

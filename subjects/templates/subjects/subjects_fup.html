@@ -1,0 +1,25 @@
+{% include "navbar.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<br><br>
+<br><br>
+
+<div class="container">
+    <h2 align="center"> Disciplinas FUP</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+            <th align="center">Código</th>
+            <th align="center">Disciplina</th>
+        </tr>
+
+        {% for subject in subjects %}
+            <tr>
+                <td align="center">{{subject.0}}</td>
+                <td align="center">{{subject.1}}</td>
+            </tr>
+        {% endfor %}
+      </thead>
+    </table>
+</div>

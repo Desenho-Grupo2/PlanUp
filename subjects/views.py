@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+import json
 
 from subjects.models import Subject
 from students.models import Student
@@ -84,3 +85,80 @@ def subtract_abscence(request, id):
     subject.subtract_abscence()
 
     return redirect('minhas_disciplinas')
+
+def show_subjects_fga(request):
+
+    subjects_fga = open('JSONS/DISCIPLINAS_FGA.json', 'r')
+    read_subjects = json.load(subjects_fga)
+    subjects_fga.close()
+
+    list_cods = read_subjects
+    tuples = []
+
+    for aux in range(156):
+
+        a = (list_cods['DISCIPLINAS_FGA']['CODIGO_DISCIPLINA'][aux])
+        b = (list_cods['DISCIPLINAS_FGA']['MATERIA'][aux])
+
+        tuples.append((a,b))
+
+
+    return render(request, "subjects/subjects_fga.html", {"subjects":tuples})
+
+def show_subjects_fce(request):
+
+    subjects_fce = open('JSONS/DISCIPLINAS_FCE.json', 'r')
+    read_subjects = json.load(subjects_fce)
+    subjects_fce.close()
+
+    list_cods = read_subjects
+    tuples = []
+
+    for aux in range(239):
+
+        a = (list_cods['DISCIPLINAS_FCE']['CODIGO_DISCIPLINA'][aux])
+        b = (list_cods['DISCIPLINAS_FCE']['MATERIA'][aux])
+
+        tuples.append((a,b))
+
+
+    return render(request, "subjects/subjects_fce.html", {"subjects":tuples})
+
+def show_subjects_fup(request):
+
+    subjects_fup = open('JSONS/DISCIPLINAS_FUP.json', 'r')
+    read_subjects = json.load(subjects_fup)
+    subjects_fup.close()
+
+    list_cods = read_subjects
+    tuples = []
+
+    for aux in range(195):
+        a = (list_cods['DISCIPLINAS_FUP']['CODIGO_DISCIPLINA'][aux])
+        b = (list_cods['DISCIPLINAS_FUP']['MATERIA'][aux])
+
+        tuples.append((a, b))
+
+    return render(request, "subjects/subjects_fup.html", {"subjects": tuples})
+
+def departaments_darcy(request):
+
+    departaments_darcy = open('JSONS/DEPARTAMENTOS_DARCY.json', 'r')
+    read_subjects = json.load(departaments_darcy)
+    departaments_darcy.close()
+
+    list_cods = read_subjects
+    tuples = []
+
+    for aux in range(76):
+        a = (list_cods['DEPARTAMENTOS_DARCY']['CODIGO'][aux])
+        b = (list_cods['DEPARTAMENTOS_DARCY']['SIGLA'][aux])
+        c = (list_cods['DEPARTAMENTOS_DARCY']['DENOMINACAO'][aux])
+
+        tuples.append((a, b,c))
+
+    return render(request, "subjects/departaments_darcy.html", {"departaments": tuples})
+
+def show_departaments(request):
+
+    return render(request, "subjects/departaments.html")

@@ -23,6 +23,11 @@ urlpatterns += [
     path('novaDisciplina/', subjects_views.create_subject, name="new_subject"),
     path('removerDisciplina/<int:pk>/', subjects_views.remove_subject_student, name="remover_disciplina"),
     path('alterarDisciplinas/<int:id>', subjects_views.update_subject, name="update_subject"),
+    path('disciplinasfga/', subjects_views.show_subjects_fga, name="subjects_fga"),
+    path('disciplinasfce/', subjects_views.show_subjects_fce, name="subjects_fce"),
+    path('disciplinasfup/', subjects_views.show_subjects_fup, name="subjects_fup"),
+    path('departamentos/', subjects_views.show_departaments, name="departamentos"),
+    path('departaments_darcy/', subjects_views.departaments_darcy, name="departamentos_darcy"),
 ]
 
 ## Faltas
